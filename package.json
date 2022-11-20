@@ -1,0 +1,38 @@
+{
+  "name": "login-and-register",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afekTheMiniLearner/login-and-register.git"
+  },
+  "author": "Afek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/afekTheMiniLearner/login-and-register/issues"
+  },
+  "homepage": "https://github.com/afekTheMiniLearner/login-and-register#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "@types/express-session": "^1.17.5",
+    "@types/passport": "^1.0.11",
+    "@types/passport-local": "^1.0.34",
+    "prettier": "^2.7.1",
+    "sass": "^1.56.1",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongoose": "^6.7.2",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7"
+  }
+}
