@@ -1,5 +1,6 @@
 import express, { Request, Response, NextFunction } from 'express';
 import path from 'path';
+import { isAuthMW } from '../middlewares/auth-middleware';
 
 const router = express.Router();
 
@@ -13,7 +14,25 @@ router.get('/', (req: Request, res: Response, next: NextFunction) => {
 });
 
 router.get('/login', (req: Request, res: Response, next: NextFunction) => {
-    res.sendFile(path.resolve(__dirname, '../..', 'client', 'htmls', 'login.html'));
+    res.sendFile(
+        path.resolve(__dirname, '../..', 'client', 'htmls', 'login.html')
+    );
 });
+
+router.get('/register', (req: Request, res: Response, next: NextFunction) => {
+    res.sendFile(
+        path.resolve(__dirname, '../..', 'client', 'htmls', 'register.html')
+    );
+});
+
+router.get(
+    '/success',
+    isAuthMW,
+    (req: Request, res: Response, next: NextFunction) => {
+        res.sendFile(
+            path.resolve(__dirname, '../..', 'client', 'htmls', 'success.html')
+        );
+    }
+);
 
 export default router;

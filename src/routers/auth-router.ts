@@ -20,4 +20,10 @@ router.post(
 
 router.post('/register', registerUserCtrl);
 
+router.post('/logout', (req, res, next) => {
+    req.logout(() => {
+        res.redirect('/login');
+    });
+});
+
 export default router;
