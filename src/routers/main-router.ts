@@ -9,7 +9,11 @@ router.use((req: Request, res: Response, next: NextFunction) => {
 });
 
 router.get('/', (req: Request, res: Response, next: NextFunction) => {
-    //res.sendFile(path.resolve(__dirname, '../..', 'client', 'htmls', 'home.html'));
+    res.redirect('/login');
+});
+
+router.get('/login', (req: Request, res: Response, next: NextFunction) => {
+    res.sendFile(path.resolve(__dirname, '../..', 'client', 'htmls', 'login.html'));
 });
 
 export default router;

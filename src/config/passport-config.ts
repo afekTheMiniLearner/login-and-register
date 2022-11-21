@@ -4,7 +4,8 @@ import bcrypt from 'bcrypt';
 import { IUser, passportConfigUser } from '../interfaces/user-interface';
 import { getUserByUsername } from '../services/user-services';
 import { UserModel } from '../models/user-model';
-const badRequestMessage = 'username or password incorrect';
+
+const badRequestMessage = 'Incorrect username or password';
 
 passport.use(
     new LocalStrategy(async (username, password, done) => {

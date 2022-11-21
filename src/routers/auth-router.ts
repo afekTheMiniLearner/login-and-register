@@ -1,15 +1,23 @@
 import express, { Request, Response, NextFunction } from 'express';
-import path from 'path';
+import passport from 'passport';
+
+import { registerUserCtrl } from '../controllers/auth-controllers';
 
 const router = express.Router();
 
 router.use((req: Request, res: Response, next: NextFunction) => {
-    console.log(`User visit from:${req.originalUrl} \nmethod:${req.method}`);
+    console.log(`User visit from:${req.originalUrl} \n method:${req.method}`);
     next();
 });
 
-router.get('/', (req: Request, res: Response, next: NextFunction) => {
-    //res.sendFile(path.resolve(__dirname, '../..', 'client', 'htmls', 'home.html'));
-});
+router.post(
+    '/login',
+    passport.authenticate('local', {
+        successRedirect: '/success',
+        failureRedirect: '/login',
+    })
+);
+
+router.post('/register', registerUserCtrl);
 
 export default router;
