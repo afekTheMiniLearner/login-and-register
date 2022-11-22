@@ -8,12 +8,12 @@ import bodyParser from 'body-parser';
 import session from 'express-session';
 import passport from 'passport';
 
-import './config';
+import './config/passport-config';
 import { connectDB } from './DB/mongoose';
 import mainRouter from './routers/main-router';
 import authRouter from './routers/auth-router';
 
-connectDB('mongodb:127.0.0.1:27017/login-and-register');
+connectDB('mongodb://127.0.0.1:27017/login-and-register');
 
 const app = express();
 const PORT = 3000;

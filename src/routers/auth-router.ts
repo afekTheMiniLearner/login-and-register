@@ -20,9 +20,10 @@ router.post(
 
 router.post('/register', registerUserCtrl);
 
-router.post('/logout', (req, res, next) => {
-    req.logout(() => {
-        res.redirect('/login');
+router.post('/logout', (req: Request, res: Response, next: NextFunction) => {
+    req.logout((err) => {
+        if (err) return next(err);
+        else res.redirect('/login');
     });
 });
 
