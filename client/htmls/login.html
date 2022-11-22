@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <link rel="stylesheet" href="../styles/css/login/style-login.css" />
+        <title>Afek's recipes site login page</title>
+    </head>
+    <body>
+        <h1>Welcome to Afek's site</br>please log-in:</h1>
+    </body>
+    <div>
+        <a class="topRedirectButton" href="/">
+           Back to home page
+        </a>
+    </div>
+    <form class="mainContainer" action="/auth/login" method="post">
+        <p class="descriptionText"><strong>Username:</strong></p>
+        <input type="text" id="username" name="username" />
+        <p class="descriptionText"><strong>Password:</strong></p>
+        <input type="password" id="password" name="password" />
+        <button class ='submitButton' type="submit">Login</button>
+        <d class="signUpContainer">
+            <span>Don't have an account?</span>
+            <a class="miniRedirectButton" href="/register">sign up now</a>
+        </d>
+    </form>
+    <div>
+        <img
+            src="../assets/chef-logo.png"
+            height="50px"
+            width="50px"
+            alt="site's logo"
+            class="logo"
+        />
+    </div>
+    <script type="text/javascript" src="https://livejs.com/live.js"></script>
 </html>
