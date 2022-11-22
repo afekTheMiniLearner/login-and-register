@@ -43,7 +43,7 @@ app.use(
         res: Response,
         next: NextFunction
     ) => {
-        console.log(`error occured: \n${err}`);
+        console.log(`Error occured: \n${err}`);
         next(err);
     }
 );
