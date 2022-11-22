@@ -1,0 +1,46 @@
+@import 'variables';
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes orangeRotation {
+    50% {
+        color: $fire-orange;
+    }
+}
+
+@keyframes move {
+    from {
+        left: 0px;
+    }
+    to {
+        left: 96.5%;
+    }
+}
+
+@keyframes poundHeart {
+    5% {
+        transform: scale(0.8);
+    }
+    10% {
+        transform: scale(0.9);
+    }
+    20% {
+        transform: scale(0.8);
+    }
+    25% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(0.8);
+    }
+}

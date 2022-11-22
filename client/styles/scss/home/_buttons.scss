@@ -1,0 +1,6 @@
+.redirectButton {
+    @include button-centered;
+    @include button-redirect-blue-design;
+    margin-top: 10px;
+    width: 50%;
+}
