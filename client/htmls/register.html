@@ -10,21 +10,18 @@
     <body>
         <h1>Join our site friend!</h1>
     </body>
-    <div>
-        Get all recipes here:
-        <button class="submitButton" id="recipesButton">get recipes</button>
-        <container class="recipesContainer" id="recipesContainer">
-            hola
-        </container>
-    </div>
     <form class="mainContainer" action="/auth/register" method="post">
         <p class="descriptionText"><strong>Username:</strong></p>
         <input type="text" id="username" name="username" />
         <p class="descriptionText"><strong>Password:</strong></p>
         <input type="password" id="password" name="password" />
         <p class="descriptionText"><strong>Re-type password:</strong></p>
-        <input type="password" id="password" name="password" />
+        <input type="password" id="re-password" name="re-password" />
         <button class="submitButton" type="submit">Register</button>
+        <d class="loginContainer">
+            <span>Already have an account?</span>
+            <a class="miniRedirectButton" href="/login">login here</a>
+        </d>
     </form>
     <script type="text/javascript" src="https://livejs.com/live.js"></script>
 </html>

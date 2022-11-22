@@ -4,7 +4,7 @@ input[type='password'] {
 }
 
 .descriptionText {
-    color: $fire-orange;
+    @include text-of-textbox;
 }
 
 input[type='text']:hover,

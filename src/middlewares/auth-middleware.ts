@@ -8,8 +8,6 @@ export async function isAuthMW(
 ): Promise<void> {
     if (req.isAuthenticated()) next();
     else {
-        alert('You must login order to complete this operation');
-        await timeout(2000);
-        res.status(401).redirect('/login');
+        res.redirect('/login');
     }
 }

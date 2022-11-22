@@ -1,17 +1,23 @@
 input[type='text'],
 input[type='password'] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 20px 0 15px 0;
-    border: 3px solid $primary-color;
-    box-sizing: border-box;
+    @include textbox-designed;
 }
 
 .descriptionText {
-    color: $fire-orange;
+    @include text-of-textbox;
 }
 
 input[type='text']:hover,
 input[type='password']:hover {
     opacity: 0.7;
+}
+
+span {
+    padding: 0 8px;
+}
+
+.miniRedirectButton {
+    &:hover {
+        opacity: 0.5;
+    }
 }

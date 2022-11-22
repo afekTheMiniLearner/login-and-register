@@ -17,6 +17,7 @@ export async function registerUserCtrl(
 
         res.sendStatus(status);
     } catch (e: any) {
+        res.redirect('/register')
         next(e);
 
         /* error can pull the server down if 

@@ -2,3 +2,7 @@
     @include container-centered-medium;
     @include container-designed;
 }
+
+.loginContainer {
+    @include container-mini-link-bottom;
+}
