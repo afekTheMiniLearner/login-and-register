@@ -5,4 +5,15 @@ async function postData(url = '', data = {}) {
     return response.json();
 }
 
-postData('/auth', userData).then((data) => {});
+function registerUser() {
+    const username = document.querySelector('input[name="username"]').value;
+    const password = document.querySelector('input[name="password"]').value;
+    const retypePassword = document.querySelector(
+        'input[name="re-password"]'
+    ).value;
+    
+    // change to confirm
+    // validate fields example must conatain numbers 5+ digits etc
+
+    postData('/auth', { username, password }).then((data) => {});
+}
