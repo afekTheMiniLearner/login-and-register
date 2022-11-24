@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="../styles/css/home/style-home.css" />
-        <title>Afek's recipes site home page</title>
+        <link rel="stylesheet" href="../styles/css/success/style-success.css" />
+        <title>Successfuly logged in</title>
     </head>
     <body>
-        <h1>Welcome to my recipes site</h1>
+        <h1 id="bigTitle">Welcome you are logged in</h1>
         <div>
-            <container class="buttonsContainer">
-                <p class="subTitle">Looking for another page?</p>
-                <a class="redirectButton" href="/login"> Login page </a>
-                <a class="redirectButton" href="/recipes-list">
-                    Our recipes page
-                </a>
-                <a class="redirectButton" href="/health-status"
-                    >Check server health
-                </a>
-            </container>
+            <form class="buttonsContainer" action="/auth/logout" method="post">
+                <p class="subTitle">Want to disconnect from your account?</p>
+                <button class="logoutButton" type="submit">Logout</button>
+            </form>
         </div>
     </body>
+    <script src="../scripts/success-scripts.js"></script>
     <script type="text/javascript" src="https://livejs.com/live.js"></script>
 </html>

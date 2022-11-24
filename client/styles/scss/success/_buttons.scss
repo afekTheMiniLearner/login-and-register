@@ -1,6 +1,6 @@
-.redirectButton {
+.logoutButton {
     @include button-centered;
-    @include button-redirect-blue-design;
-    margin-top: 10px;
+    @include button-orange-design;
+    margin-top: 20px;
     width: 50%;
 }

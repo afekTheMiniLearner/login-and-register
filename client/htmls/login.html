@@ -7,7 +7,7 @@
     <body>
         <h1>Welcome to Afek's site</br>please log-in:</h1>
     </body>
-    <form class="mainContainer" action="/auth/login" method="post">
+    <form class="mainContainer" action="javascript:loginUser()">
         <p class="descriptionText"><strong>Username:</strong></p>
         <input type="text" id="username" name="username" />
         <p class="descriptionText"><strong>Password:</strong></p>
@@ -27,5 +27,7 @@
             class="logo"
         />
     </div>
+    <script src="../scripts/login-script.js"></script>
+    <script src="../scripts/utils.js"></script>
     <script type="text/javascript" src="https://livejs.com/live.js"></script>
 </html>

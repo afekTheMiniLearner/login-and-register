@@ -52,6 +52,7 @@
     color: $fire-orange;
     background-color: white;
     border: 2px solid $fire-orange;
+    font-size: medium;
 }
 
 @mixin button-redirect-blue-design {
@@ -88,6 +89,7 @@
     font-size: 30px;
     text-align: center;
     color: $fire-orange;
+    font-weight: bold;
 }
 
 @mixin textbox-designed {
