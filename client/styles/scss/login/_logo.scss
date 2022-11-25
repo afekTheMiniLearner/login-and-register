@@ -5,12 +5,17 @@ img.logo {
     animation-delay: 0.2s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    width: 57px;
-    height: 57px;
+    width: 67px;
+    height: 67px;
     top: 85px;
+    border-radius: 100%;
+    border: black solid 1px;
 }
 
 img.logo:hover {
     cursor: pointer;
-    background-color: $primary-color;
+    width: 66px;
+    height: 66px;
+    border-radius: 100%;
+    border: black solid 2px;
 }

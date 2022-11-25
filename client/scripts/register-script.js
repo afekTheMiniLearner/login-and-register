@@ -13,7 +13,13 @@ async function registerUser() {
     await postData('/auth/register', {
         username: username,
         password: password,
-    }).then(() => {
-        window.location.replace('/login');
-    });
+    })
+        .then((response) => {
+            if (!response.ok) alert('Error creating the user', e);
+            else window.location.replace('/login');
+        })
+        .catch((e) => {
+            alert('Error creating the user, try different username', e);
+            next(e);
+        });
 }
