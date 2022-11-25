@@ -3,5 +3,7 @@ window.onload = () => {
         'bigTitle'
     ).innerHTML = `Welcome ${localStorage.getItem(
         'successLoginUsername'
-    )} you are logged in`;
+    )}</br> you are logged in`;
+
+    removeClass(2, 'bigTitle', 'titleInitialAnimation');
 };

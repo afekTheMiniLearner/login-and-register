@@ -1,11 +1,16 @@
 @import 'variables';
 
 @mixin main-title-big-center {
-    position: static;
+    position: relative;
     text-align: center;
     font-size: 60px;
-    min-height: 100px;
+    height: 150px;
+    max-height: 150px;
     margin-bottom: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    color: white;
+    letter-spacing: 10px;
 }
 
 @mixin main-title-black-shadow {

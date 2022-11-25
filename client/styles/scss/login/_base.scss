@@ -6,5 +6,12 @@ h1 {
     @include main-title-big-center;
     @include main-title-black-shadow;
     @include main-title-orange-animation;
-    color: white;
+
+    &.titleInitialAnimation {
+        animation: comein-low-spacing 1.8s ease-in-out;
+    }
+
+    :not(.titleInitialAnimation) {
+        animation: orangeRotation 5s infinite;
+    }
 }

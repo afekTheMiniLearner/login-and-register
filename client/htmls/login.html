@@ -5,25 +5,21 @@
         <title>Afek's site</title>
     </head>
     <body>
-        <h1>Welcome to Afek's site</br>please log-in:</h1>
+        <h1 id="bigTitle" class="titleInitialAnimation">Welcome, please log-in:</h1>
     </body>
     <form class="mainContainer" action="javascript:loginUser()">
         <p class="descriptionText"><strong>Username:</strong></p>
         <input type="text" id="username" name="username" />
         <p class="descriptionText"><strong>Password:</strong></p>
         <input type="password" id="password" name="password" />
-        <button class ='submitButton' type="submit">Login</button>
+        <button class="submitButton" type="submit">Login</button>
         <d class="signUpContainer">
             <span>Don't have an account?</span>
             <a class="miniRedirectButton" href="/register">sign up now</a>
         </d>
     </form>
     <div>
-        <img
-            src="../assets/smiling-face.png"
-            alt="site's logo"
-            class="logo"
-        />
+        <img src="../assets/smiling-face.png" alt="site's logo" class="logo" />
     </div>
     <script src="../scripts/login-script.js"></script>
     <script src="../scripts/utils.js"></script>
