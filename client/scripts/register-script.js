@@ -14,9 +14,8 @@ async function registerUser() {
         username: username,
         password: password,
     })
-        .then((response) => {
-            if (!response.ok) alert('Error creating the user', e);
-            else window.location.replace('/login');
+        .then(() => {
+            window.location.replace('/login');
         })
         .catch((e) => {
             alert('Error creating the user, try different username', e);

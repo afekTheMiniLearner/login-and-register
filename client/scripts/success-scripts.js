@@ -1,5 +1,7 @@
 window.onload = () => {
     document.getElementById(
         'bigTitle'
-    ).innerHTML = `Welcome ${loggedInUsername} you are logged in`;
+    ).innerHTML = `Welcome ${localStorage.getItem(
+        'successLoginUsername'
+    )} you are logged in`;
 };
