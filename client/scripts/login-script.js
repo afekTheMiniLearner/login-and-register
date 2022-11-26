@@ -11,10 +11,8 @@ async function loginUser() {
         password: password,
     })
         .then(() => {
-            {
-                window.location.replace('/success');
-                localStorage.setItem('successLoginUsername', username);
-            }
+            window.location.replace('/success');
+            localStorage.setItem('successLoginUsername', username);
         })
         .catch((e) => {
             alert('error occured', e);
