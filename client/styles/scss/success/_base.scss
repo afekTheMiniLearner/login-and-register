@@ -1,8 +1,8 @@
 h1 {
     @include main-title-big-center;
-    @include main-title-black-shadow;
+    @include main-title-design;
     @include main-title-orange-animation;
-    
+
     &.titleInitialAnimation {
         animation: comein-high-spacing 1.8s ease-in-out;
     }

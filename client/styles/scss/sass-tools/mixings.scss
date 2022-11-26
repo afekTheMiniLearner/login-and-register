@@ -1,31 +1,36 @@
 @import 'variables';
 
+@font-face {
+    font-family: 'RobotoSlab';
+    src: url('../../../fonts/RobotoSlab-VariableFont_wght.ttf');
+}
+
 @mixin main-title-big-center {
+    font: $font-main-robotslab;
     position: relative;
     text-align: center;
     font-size: 60px;
-    height: 150px;
-    max-height: 150px;
+    height: 170px;
+    max-height: 170px;
     margin-bottom: 50px;
+}
+
+@mixin main-title-design {
     white-space: nowrap;
     overflow: hidden;
     color: white;
     letter-spacing: 10px;
-}
-
-@mixin main-title-black-shadow {
-    -webkit-text-stroke: 2px rgb(0, 0, 0);
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
     text-shadow: 0 2px 5px rgb(0, 0, 0);
 }
 
 @mixin main-title-orange-animation {
     animation: orangeRotation 5s;
-    animation-delay: 0.5s;
     animation-iteration-count: infinite;
 }
 
 @mixin body-background-and-font {
-    font: 100% Trebuchet MS, Lucida Sans Unicode, Lucida Grande;
+    font: $font-main-robotslab;
     background-image: url('../../../assets/grill-man.jpg');
     background-size: 100%;
 }
@@ -106,6 +111,7 @@
 }
 
 @mixin text-of-textbox {
+    font: 100% Courier New, monospace;
     color: $fire-orange;
     margin-bottom: 0;
 }
