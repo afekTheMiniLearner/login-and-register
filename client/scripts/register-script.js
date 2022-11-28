@@ -18,9 +18,10 @@ async function registerUser() {
         username: username,
         password: password,
     })
-        .then((response) => {
-            if (response.ok) return window.location.replace('/login');
-            throw Error('Error creating the user, try different username');
+        .then((res) => {
+            console.log(res);
         })
-        .catch((e) => {});
+        .catch((err) => {
+            alert('error occured', err);
+        });
 }

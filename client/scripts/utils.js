@@ -5,7 +5,17 @@ async function postData(url, data) {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
-    });
+    })
+        .then((response) => {
+            if (response.ok) return response;
+            throw Error(response.statusText);
+        })
+        .then((res) => {
+            if (res.redirected) {
+                window.location.href = res.url;
+            }
+            return res;
+        });
 }
 
 function removeClass(waitBeforeAction = 2, elementId, className) {
