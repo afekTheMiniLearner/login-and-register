@@ -1,4 +1,4 @@
-# Login-and-register <img src="./client/assets/pictures/login-page.png" width=100px height=100px align="right">
+# Login-and-register <img src="./readme-resources/login-logo.png" width=100px height=100px align="right">
 
 ### This is a server side and web (sass+css+html) project, this project done with high strictness under the guidance of best practices and standards, a lot of work that summarize some of my knowladge about css + html and server side<br />
 
@@ -29,6 +29,12 @@ The project includes the following APIs :
     -   `npm run dev`<br /> (runs _typescript_ code for developement with _nodemon_)
     -   For developing the _sass_ style its necessary to install _sass_ inside the "client" folder. Than to compile the scss files into css you should run this script :<br />
         `"sass-compile": "sass styles/scss:styles/css"`
+
+---
+
+### **Example of using the project's login/logout/register operations:**
+
+![Example-GIF](./readme-resources/web-gif.gif)
 
 ---
 
