@@ -55,7 +55,6 @@ The project includes the following APIs :
 
 -   [x] **_passport_ authentication** : authenticate user by compare crypted password with user plaintext password request by the bast practice guidance.
 -   [x] **_mongoose_ schema hooks** : use pre save hook that crypt the user password before creating user (update user data not applied).
--   [x] **status code** : returns a correct status code for http requests responses.
 -   [x] **_postman_** : exported postman collection for _postman_ software :
         `login_and_register_rest_api.postman_collection.json`
 
