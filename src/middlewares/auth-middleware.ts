@@ -1,5 +1,4 @@
 import { Request, Response, NextFunction } from 'express';
-const timeout = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
 export async function isAuthMW(
     req: Request,
