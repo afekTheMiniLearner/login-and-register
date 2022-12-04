@@ -20,8 +20,8 @@ async function registerUser() {
         username: username,
         password: password,
     })
-        .then((res) => {
-            console.log(res);
+        .then(() => {
+            window.location.href = '/login';
         })
         .catch((err) => {
             alert('Username already exists', err);
