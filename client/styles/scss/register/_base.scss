@@ -3,9 +3,7 @@ body {
 }
 
 h1 {
-    @include main-title-big-center;
-    @include main-title-design;
-    @include main-title-orange-animation;
+    @include big-title;
 
     &.titleInitialAnimation {
         animation: comein-low-spacing 1.8s ease-in-out;

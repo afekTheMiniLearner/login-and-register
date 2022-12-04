@@ -1,36 +1,29 @@
 @import 'variables';
 
 @font-face {
-    font-family: 'RobotoSlab';
-    src: url('../../../assets/fonts/RobotoSlab-VariableFont_wght.ttf');
+    font-family: 100% 'RobotoSlab';
+    src: url(../../../assets/fonts/RobotoSlab-VariableFont_wght.ttf);
 }
 
-@mixin main-title-big-center {
-    font-family: $font-main-robotslab;
+@mixin big-title {
     position: relative;
     text-align: center;
     font-size: 60px;
     height: 170px;
     max-height: 170px;
     margin-bottom: 50px;
-}
-
-@mixin main-title-design {
     white-space: nowrap;
     overflow: hidden;
     color: white;
     letter-spacing: 10px;
     -webkit-text-stroke: 1px rgb(0, 0, 0);
     text-shadow: 0 2px 5px rgb(0, 0, 0);
-}
-
-@mixin main-title-orange-animation {
     animation: orangeRotation 5s;
     animation-iteration-count: infinite;
 }
 
 @mixin body-background-and-font {
-    font: $font-main-robotslab;
+    font-family: RobotoSlab;
     background-image: url('../../../assets/pictures/white-bg.jpg');
     background-size: 100%;
 }
