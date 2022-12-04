@@ -1,0 +1,15 @@
+body {
+    @include body-background-and-font;
+}
+
+h1 {
+    @include big-title;
+
+    &.titleInitialAnimation {
+        animation: comein-low-spacing 1.8s ease-in-out;
+    }
+
+    :not(.titleInitialAnimation) {
+        animation: orangeRotation 5s infinite;
+    }
+}

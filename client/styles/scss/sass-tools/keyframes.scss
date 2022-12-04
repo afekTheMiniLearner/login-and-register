@@ -1,0 +1,44 @@
+@import 'variables';
+
+@keyframes orangeRotation {
+    50% {
+        color: $fire-orange;
+    }
+}
+
+@keyframes move {
+    from {
+        left: 0px;
+    }
+    to {
+        left: 96.5%;
+    }
+}
+
+@keyframes comein-low-spacing {
+    0% {
+        letter-spacing: 50px;
+        color: $fire-orange;
+    }
+    70% {
+        letter-spacing: 1px;
+    }
+    100% {
+        letter-spacing: 10px;
+        color: white;
+    }
+}
+
+@keyframes comein-high-spacing {
+    0% {
+        letter-spacing: 70px;
+        color: $fire-orange;
+    }
+    70% {
+        letter-spacing: 1px;
+    }
+    100% {
+        letter-spacing: 10px;
+        color: white;
+    }
+}

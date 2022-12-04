@@ -1,0 +1,6 @@
+.buttonsContainer {
+    @include container-centered-medium;
+    @include container-designed;
+    align-items: center;
+    height: 220px;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link
+            rel="stylesheet"
+            href="../styles/css/register/style-register.css"
+        />
+        <title>Afek's site</title>
+    </head>
+    <body>
+        <h1 id="bigTitle" class="titleInitialAnimation">Join my site friend !</h1>
+    </body>
+    <form class="mainContainer" action="javascript:registerUser()">
+        <p class="descriptionText"><strong>Username:</strong></p>
+        <input type="text" id="username" name="username" />
+        <p class="descriptionText"><strong>Password:</strong></p>
+        <input type="password" id="password" name="password" />
+        <p class="descriptionText"><strong>Confirm password:</strong></p>
+        <input type="password" id="re-password" name="re-password" />
+        <button class="submitButton" type="submit">Register</button>
+        <d class="loginContainer">
+            <span>Already have an account?</span>
+            <a class="miniRedirectButton" href="/login">login here</a>
+        </d>
+    </form>
+    <script src="../scripts/register-script.js"></script>
+    <script src="../scripts/utils.js"></script>
+</html>

@@ -1,0 +1,23 @@
+input[type='text'],
+input[type='password'] {
+    @include textbox-designed;
+}
+
+.descriptionText {
+    @include text-of-textbox;
+}
+
+input[type='text']:hover,
+input[type='password']:hover {
+    opacity: 0.7;
+}
+
+span {
+    padding: 0 8px;
+}
+
+.miniRedirectButton {
+    &:hover {
+        opacity: 0.5;
+    }
+}

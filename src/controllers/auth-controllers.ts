@@ -18,7 +18,6 @@ export async function registerUserCtrl(
         res.sendStatus(status);
     } catch (e: any) {
         next(e);
-
         /* error can pull the server down if 
         the username already exists */
     }

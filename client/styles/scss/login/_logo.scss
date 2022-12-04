@@ -1,0 +1,18 @@
+img.logo {
+    margin-top: 20px;
+    position: relative;
+    animation: move 15s 1s infinite alternate linear;
+    width: 67px;
+    height: 67px;
+    top: 85px;
+    border-radius: 100%;
+    border: black solid 1px;
+}
+
+img.logo:hover {
+    cursor: pointer;
+    width: 66px;
+    height: 66px;
+    border-radius: 100%;
+    border: black solid 2px;
+}

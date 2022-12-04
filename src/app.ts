@@ -7,6 +7,7 @@ import express, {
 import bodyParser from 'body-parser';
 import session from 'express-session';
 import passport from 'passport';
+import path from 'path';
 
 import './config/passport-config';
 import { connectDB } from './DB/mongoose';
@@ -29,6 +30,8 @@ app.use(
         cookie: { secure: false },
     })
 );
+
+app.use(express.static(path.join(__dirname, '..', 'client')));
 
 app.use(passport.initialize());
 app.use(passport.session());

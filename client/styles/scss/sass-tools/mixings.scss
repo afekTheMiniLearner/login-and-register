@@ -1,0 +1,110 @@
+@import 'variables';
+
+@font-face {
+    font-family: 100% 'RobotoSlab';
+    src: url(../../../assets/fonts/RobotoSlab-VariableFont_wght.ttf);
+}
+
+@mixin big-title {
+    position: relative;
+    text-align: center;
+    font-size: 60px;
+    height: 170px;
+    max-height: 170px;
+    margin-bottom: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    color: white;
+    letter-spacing: 10px;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+    text-shadow: 0 2px 5px rgb(0, 0, 0);
+    animation: orangeRotation 5s;
+    animation-iteration-count: infinite;
+}
+
+@mixin body-background-and-font {
+    font-family: RobotoSlab;
+    background-image: url('../../../assets/pictures/white-bg.jpg');
+    background-size: 100%;
+}
+
+@mixin button-centered {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    cursor: pointer !important;
+    padding: 14px 20px;
+    width: 100%;
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+@mixin button-link-tiny-top {
+    position: relative;
+    top: -130px;
+    cursor: pointer !important;
+    padding: 10px 20px;
+    width: 138px;
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+@mixin button-orange-design {
+    color: $fire-orange;
+    background-color: white;
+    border: 2px solid $fire-orange;
+    font-size: medium;
+}
+
+@mixin button-redirect-blue-design {
+    color: $link-color;
+    font-weight: lighter;
+    background-color: white;
+    border: 3px solid $primary-color;
+}
+
+@mixin container-mini-link-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 630px;
+    padding: 10px 8px;
+}
+
+@mixin container-centered-medium {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 650px;
+    padding: 20px 80px 20px 80px;
+}
+
+@mixin container-designed {
+    background-color: $almost-invisible-color;
+    border: 4px solid $primary-color;
+    border-radius: 10px;
+    box-shadow: 0 3px 20px rgb(1, 1, 1);
+}
+
+@mixin text-orange-small {
+    font-size: 30px;
+    text-align: center;
+    color: $fire-orange;
+    font-weight: bold;
+}
+
+@mixin textbox-designed {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 5px 0 25px 0;
+    border: 3px solid $primary-color;
+    box-sizing: border-box;
+}
+
+@mixin text-of-textbox {
+    font: 100% Courier new, monospace;
+    color: $fire-orange;
+    margin-bottom: 0;
+}
