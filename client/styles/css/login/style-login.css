@@ -1,0 +1,156 @@
+@font-face {
+  font-family: 100% "RobotoSlab";
+  src: url(../../../assets/fonts/RobotoSlab-VariableFont_wght.ttf);
+}
+@keyframes orangeRotation {
+  50% {
+    color: #d77300;
+  }
+}
+@keyframes move {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 96.5%;
+  }
+}
+@keyframes comein-low-spacing {
+  0% {
+    letter-spacing: 50px;
+    color: #d77300;
+  }
+  70% {
+    letter-spacing: 1px;
+  }
+  100% {
+    letter-spacing: 10px;
+    color: white;
+  }
+}
+@keyframes comein-high-spacing {
+  0% {
+    letter-spacing: 70px;
+    color: #d77300;
+  }
+  70% {
+    letter-spacing: 1px;
+  }
+  100% {
+    letter-spacing: 10px;
+    color: white;
+  }
+}
+body {
+  font-family: RobotoSlab;
+  background-image: url("../../../assets/pictures/white-bg.jpg");
+  background-size: 100%;
+}
+
+h1 {
+  position: relative;
+  text-align: center;
+  font-size: 60px;
+  height: 170px;
+  max-height: 170px;
+  margin-bottom: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  color: white;
+  letter-spacing: 10px;
+  -webkit-text-stroke: 1px rgb(0, 0, 0);
+  text-shadow: 0 2px 5px rgb(0, 0, 0);
+  animation: orangeRotation 5s;
+  animation-iteration-count: infinite;
+}
+h1.titleInitialAnimation {
+  animation: comein-low-spacing 1.8s ease-in-out;
+}
+h1 :not(.titleInitialAnimation) {
+  animation: orangeRotation 5s infinite;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 650px;
+  padding: 20px 80px 20px 80px;
+  background-color: rgba(255, 255, 255, 0.031372549);
+  border: 4px solid #ababab;
+  border-radius: 10px;
+  box-shadow: 0 3px 20px rgb(1, 1, 1);
+}
+
+.signUpContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 630px;
+  padding: 10px 8px;
+}
+
+input[type=text],
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 5px 0 25px 0;
+  border: 3px solid #ababab;
+  box-sizing: border-box;
+}
+
+.descriptionText {
+  font: 100% Courier new, monospace;
+  color: #d77300;
+  margin-bottom: 0;
+}
+
+input[type=text]:hover,
+input[type=password]:hover {
+  opacity: 0.7;
+}
+
+span {
+  padding: 0 8px;
+}
+
+.miniRedirectButton:hover {
+  opacity: 0.5;
+}
+
+img.logo {
+  margin-top: 20px;
+  position: relative;
+  animation: move 15s 1s infinite alternate linear;
+  width: 67px;
+  height: 67px;
+  top: 85px;
+  border-radius: 100%;
+  border: black solid 1px;
+}
+
+img.logo:hover {
+  cursor: pointer;
+  width: 66px;
+  height: 66px;
+  border-radius: 100%;
+  border: black solid 2px;
+}
+
+.submitButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  cursor: pointer !important;
+  padding: 14px 20px;
+  width: 100%;
+  color: #d77300;
+  background-color: white;
+  border: 2px solid #d77300;
+  font-size: medium;
+}
+.submitButton:hover {
+  opacity: 0.5;
+}
+
+/*# sourceMappingURL=style-login.css.map */

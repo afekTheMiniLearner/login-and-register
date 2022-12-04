@@ -24,15 +24,11 @@ The project includes the following APIs :
 
 **Command lines**
 
--   **Preparation**
-
-    -   Before running the project its necessary <br />to install _sass_ inside the "client" folder.
-    -   After installing sass inside the "client" folder<br /> you need to run the script :<br />
-        `"sass-compile": "sass styles/scss:styles/css"`
-
 -   **The command to run the project**
     -   `npm run start`<br /> (runs build of typescript, and runs the JS compiled project)
     -   `npm run dev`<br /> (runs _typescript_ code for developement with _nodemon_)
+    -   For developing the _sass_ style its necessary to install _sass_ inside the "client" folder. Than to compile the scss files into css you should run this script :<br />
+        `"sass-compile": "sass styles/scss:styles/css"`
 
 ---
 
