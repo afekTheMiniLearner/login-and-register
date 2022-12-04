@@ -19,5 +19,5 @@ async function loginUser() {
 }
 
 function soundEffect(name) {
-    new Audio(`../assets/${name}-sound.mp3`).play();
+    new Audio(`../assets/sounds/${name}-sound.mp3`).play();
 }

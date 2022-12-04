@@ -2,11 +2,11 @@
 
 @font-face {
     font-family: 'RobotoSlab';
-    src: url('../../../fonts/RobotoSlab-VariableFont_wght.ttf');
+    src: url('../../../assets/fonts/RobotoSlab-VariableFont_wght.ttf');
 }
 
 @mixin main-title-big-center {
-    font: $font-main-robotslab;
+    font-family: $font-main-robotslab;
     position: relative;
     text-align: center;
     font-size: 60px;
@@ -31,7 +31,7 @@
 
 @mixin body-background-and-font {
     font: $font-main-robotslab;
-    background-image: url('../../../assets/grill-man.jpg');
+    background-image: url('../../../assets/pictures/white-bg.jpg');
     background-size: 100%;
 }
 
@@ -111,7 +111,7 @@
 }
 
 @mixin text-of-textbox {
-    font: 100% Courier New, monospace;
+    font: 100% Courier new, monospace;
     color: $fire-orange;
     margin-bottom: 0;
 }
