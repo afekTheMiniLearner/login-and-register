@@ -5,7 +5,9 @@
         <title>Afek's site</title>
     </head>
     <body>
-        <h1 id="bigTitle" class="titleInitialAnimation">Welcome, please log-in:</h1>
+        <h1 id="bigTitle" class="titleInitialAnimation">
+            Welcome, please log-in:
+        </h1>
     </body>
     <form class="mainContainer" action="javascript:loginUser()">
         <p class="descriptionText"><strong>Username:</strong></p>
@@ -19,7 +21,12 @@
         </d>
     </form>
     <div>
-        <img src="../assets/smiling-face.png" alt="site's logo" class="logo" />
+        <img
+            src="../assets/smiling-face.png"
+            alt="site's logo"
+            class="logo"
+            onclick="soundEffect('cartoon-click')"
+        />
     </div>
     <script src="../scripts/login-script.js"></script>
     <script src="../scripts/utils.js"></script>

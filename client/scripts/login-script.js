@@ -14,6 +14,10 @@ async function loginUser() {
             localStorage.setItem('successLoginUsername', username);
         })
         .catch((e) => {
-            alert('error occured', e);
+            alert('Incorrect username or password', e);
         });
+}
+
+function soundEffect(name) {
+    new Audio(`../assets/${name}-sound.mp3`).play();
 }

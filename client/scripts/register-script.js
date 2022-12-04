@@ -12,7 +12,9 @@ async function registerUser() {
     if (password.length < 5) {
         return alert('Password must contain at least 5 characters');
     }
-    if (password !== retypePassword) return alert('Password fields not match');
+
+    if (password !== retypePassword)
+        return alert('Password fields does not match');
 
     await postData('/auth/register', {
         username: username,
@@ -22,6 +24,6 @@ async function registerUser() {
             console.log(res);
         })
         .catch((err) => {
-            alert('error occured', err);
+            alert('Username already exists', err);
         });
 }
