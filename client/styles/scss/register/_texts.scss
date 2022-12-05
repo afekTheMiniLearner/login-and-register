@@ -1,10 +1,10 @@
 input[type='text'],
 input[type='password'] {
-    @include textbox-designed;
+    @include box-of-text-input;
 }
 
 .descriptionText {
-    @include text-of-textbox;
+    @include input-text;
 }
 
 input[type='text']:hover,

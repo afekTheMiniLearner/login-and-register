@@ -1,5 +1,8 @@
 .subTitle {
-    @include text-orange-small;
+    font-size: 30px;
+    text-align: center;
+    color: $fire-orange;
+    font-weight: bold;
     size: 20px;
     font-weight: normal;
 }

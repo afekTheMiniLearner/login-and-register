@@ -1,6 +1,5 @@
 .logoutButton {
-    @include button-centered;
-    @include button-orange-design;
+    @include orange-button-centered;
     margin-top: 20px;
     width: 50%;
 }

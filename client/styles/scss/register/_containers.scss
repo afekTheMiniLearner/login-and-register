@@ -1,6 +1,5 @@
 .mainContainer {
-    @include container-centered-medium;
-    @include container-designed;
+    @include medium-container-centered;
 }
 
 .loginContainer {
