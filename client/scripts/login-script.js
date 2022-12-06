@@ -10,6 +10,9 @@ async function loginUser() {
         username: username,
         password: password,
     })
+        .then((res) => {
+            return res.json();
+        })
         .then((data) => {
             //always undefined here
             localStorage.setItem('successLoginUsername', username);
