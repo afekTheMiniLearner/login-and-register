@@ -10,8 +10,9 @@ async function loginUser() {
         username: username,
         password: password,
     })
-        .then(() => {
+        .then((data) => {
             localStorage.setItem('successLoginUsername', username);
+            localStorage.setItem('token', data.token);
         })
         .catch((e) => {
             alert('Incorrect username or password', e);
