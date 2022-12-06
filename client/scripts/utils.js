@@ -16,7 +16,7 @@ async function postData(url, data) {
             if (res.redirected) {
                 window.location.href = res.url;
             }
-            return res.json();
+            return res;
         });
 }
 

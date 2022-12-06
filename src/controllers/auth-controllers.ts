@@ -31,7 +31,7 @@ export async function loginUserCtrl(
     try {
         const token = await loginUser(req.body.username, req.body.password);
 
-        if (token) res.status(200).json({ token });
+        if (token) res.json({ token });
         else res.redirect('/login');
     } catch (e: any) {
         next(e);

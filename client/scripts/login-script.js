@@ -11,6 +11,7 @@ async function loginUser() {
         password: password,
     })
         .then((data) => {
+            //always undefined here
             localStorage.setItem('successLoginUsername', username);
             localStorage.setItem('token', data.token);
         })
