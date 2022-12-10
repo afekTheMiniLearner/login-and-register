@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "sass-compile": "sass styles/scss:styles/css",
-        "scss-watch-folder": "sass --watch styles/scss:styles/css"
+        "sass-watch-folder": "sass --watch styles/scss:styles/css"
     },
     "author": "",
     "license": "ISC",
