@@ -52,6 +52,7 @@ The project includes the following APIs :
 -   [x] _**nodemon**_ : watch and compile any changes for _typescript_ files.
 -   [x] _**prettier**_ : fix annotation and organized code by standard with _prettier_ watcher.
 -   [x] _**sass**_ : using _sass_ allowed me to use mixins, variable, and generally write more organized, simple, and readable code.
+-   [x] _**lite-server**_ : watch any real-time changes in the _sass_ & _html_ files.
 
 ### Another features i been using in this project:
 
