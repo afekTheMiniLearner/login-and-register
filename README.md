@@ -65,3 +65,10 @@ The project includes the following APIs :
 -   [x] **Scripting** : the use of _js_ script files inside the client pages allowed me to interact with the page when the user click on a button.
 -   [x] **Hovering, animations and sound effects** : using effects while the user hover on some components & using _keyframes_ animations or sound effects inside the page makes the page more responsive and allow the user to feel better the interaction with the page.
 -   [x] **Simple-design** : this allows the user to focus on the main porpuse of any page and to be pleasant and comfort to the eye using features like shadows, borders, fonts, different opacity levels, etc...
+
+## Author
+
+:octocat: **Afek Sakaju**
+
+-   LinkedIn: [@afeksa](https://www.linkedin.com/in/afeksa/)
+-   GitHub: [@afekTheMiniLearner](https://github.com/afekTheMiniLearner)
