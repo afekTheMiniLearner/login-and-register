@@ -5,6 +5,7 @@ import {
     registerUserCtrl,
     loginUserCtrl,
 } from '../controllers/auth-controllers';
+import { isAuthMW } from '../middlewares/auth-middleware';
 
 const router = express.Router();
 
@@ -16,6 +17,10 @@ router.use((req: Request, res: Response, next: NextFunction) => {
 router.post('/login', loginUserCtrl);
 
 router.post('/register', registerUserCtrl);
+
+router.get('/user-authenticated', isAuthMW, (req: Request, res: Response) => {
+    res.sendStatus(200);
+});
 
 /*
 router.post('/logout', (req: Request, res: Response, next: NextFunction) => {
