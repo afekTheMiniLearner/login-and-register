@@ -1,11 +1,8 @@
 async function postData(url, data) {
-    const token = localStorage.getItem('token');
-    
-    return await fetch(url, {
+    await fetch(url, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(data),
     })
@@ -17,7 +14,6 @@ async function postData(url, data) {
             if (res.redirected) {
                 window.location.href = res.url;
             }
-
             return res;
         });
 }
