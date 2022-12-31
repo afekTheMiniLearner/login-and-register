@@ -4,6 +4,7 @@ import bcrypt from 'bcrypt';
 import { accessPrivateKey, refreshPrivateKey } from '../app';
 import { UserModel } from '../models/user-model';
 import { IUser } from '../interfaces/user-interface';
+import { RefreshTokenModel } from '../models/refreshToken-model';
 
 export async function getUserByUsername(
     username: string
@@ -40,14 +41,27 @@ export async function loginUser(
             const accessToken = jwt.sign({ user }, accessPrivateKey, {
                 expiresIn: '15s',
             });
-            const refreshToken = jwt.sign(user.username, refreshPrivateKey);
+            const refreshToken = jwt.sign(
+                { name: user.username },
+                refreshPrivateKey
+            );
+
+            const refreshTokenDoc = new RefreshTokenModel({
+                tokenId: refreshToken,
+            });
+
+            await refreshTokenDoc.save();
 
             return { accessToken, refreshToken };
     }
 }
 
 export async function verifyRefreshToken(refreshToken: string): Promise<any> {
-    if (!refreshToken || !refreshToken /*db*/) return false;
+    const isTokenValid = await RefreshTokenModel.findOne({
+        tokenId: refreshToken,
+    });
+
+    if (!isTokenValid) return false;
 
     jwt.verify(refreshToken, refreshPrivateKey, (err, user) => {
         if (err) return false;
