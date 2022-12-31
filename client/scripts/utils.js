@@ -12,13 +12,13 @@ async function postData(url, data) {
 }
 
 async function getData(url) {
-    const jwt = localStorage.getItem('jwt');
+    const accessToken = localStorage.getItem('jwtAccessToken');
 
     return await fetch(url, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            ...(jwt && { Authorization: 'Bearer ' + jwt }),
+            ...(accessToken && { Authorization: 'Bearer ' + accessToken }),
         },
     }).then((response) => {
         if (response.ok) return response;

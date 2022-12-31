@@ -40,7 +40,7 @@ export async function loginUser(
             const accessToken = jwt.sign({ user }, accessPrivateKey, {
                 expiresIn: '15s',
             });
-            const refreshToken = jwt.sign({ user }, refreshPrivateKey);
+            const refreshToken = jwt.sign(user.username, refreshPrivateKey);
 
             return { accessToken, refreshToken };
     }

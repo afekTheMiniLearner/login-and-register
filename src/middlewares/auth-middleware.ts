@@ -9,12 +9,12 @@ export async function isAuthMW(
     next: NextFunction
 ): Promise<void> {
     try {
-        const token = req.headers.authorization?.replace(
+        const accessToken = req.headers.authorization?.replace(
             'Bearer ',
             ''
         ) as string;
         
-        jwt.verify(token, accessPrivateKey, { expireIn: '24h' } as VerifyOptions);
+        jwt.verify(accessToken, accessPrivateKey, { expireIn: '24h' } as VerifyOptions);
         next();
     } catch (e) {
         res.redirect('/login');

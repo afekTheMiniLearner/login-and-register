@@ -44,7 +44,7 @@ export async function loginUserCtrl(
 }
 
 export async function verifyRefreshTokenCtrl(req: Request, res: Response) {
-    const accessToken = await verifyRefreshToken(req.body.token);
+    const accessToken = await verifyRefreshToken(req.body.refreshToken);
 
     if (!accessToken) res.sendStatus(400);
     else res.json({ accessToken });
