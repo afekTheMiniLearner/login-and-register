@@ -1,6 +1,10 @@
 import { Request, Response, NextFunction } from 'express';
 import { IUser } from '../interfaces/user-interface';
-import { registerUser, loginUser } from '../services/user-services';
+import {
+    registerUser,
+    loginUser,
+    verifyRefreshToken,
+} from '../services/user-services';
 
 export async function registerUserCtrl(
     req: Request,
@@ -17,9 +21,7 @@ export async function registerUserCtrl(
 
         res.sendStatus(status);
     } catch (e: any) {
-        next(e);
-        /* error can pull the server down if 
-        the username already exists */
+        next(e); // can crash the server if username already exists
     }
 }
 
@@ -29,13 +31,21 @@ export async function loginUserCtrl(
     next: NextFunction
 ) {
     try {
-        const token = await loginUser(req.body.username, req.body.password);
+        const { accessToken, refreshToken } = await loginUser(
+            req.body.username,
+            req.body.password
+        );
 
-        if (token) res.json({ token });
+        if (accessToken) res.json({ accessToken, refreshToken });
         else res.redirect('/login');
     } catch (e: any) {
-        next(e);
-        /* error can pull the server down if 
-        the username already exists */
+        next(e); // can crash the server if username already exists
     }
+}
+
+export async function verifyRefreshTokenCtrl(req: Request, res: Response) {
+    const accessToken = await verifyRefreshToken(req.body.token);
+
+    if (!accessToken) res.sendStatus(400);
+    else res.json({ accessToken });
 }

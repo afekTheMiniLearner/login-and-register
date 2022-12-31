@@ -50,5 +50,6 @@ app.listen(PORT, () => {
     console.log(`Server is up on port ${PORT}`);
 });
 
-export const privateKey = 'Its-a-secret-shhhh!';
+export const accessPrivateKey = 'Its-a-secret-shhhh!';
+export const refreshPrivateKey = 'sImBa-99099';
 export default app;

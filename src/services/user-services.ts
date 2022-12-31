@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 
-import { privateKey } from '../app';
+import { accessPrivateKey, refreshPrivateKey } from '../app';
 import { UserModel } from '../models/user-model';
 import { IUser } from '../interfaces/user-interface';
 
@@ -24,7 +24,7 @@ export async function registerUser(user: IUser): Promise<number> {
 export async function loginUser(
     username: string,
     password: string
-): Promise<string | undefined> {
+): Promise<any> {
     const user = (await getUserByUsername(username)) as IUser;
 
     switch (true) {
@@ -36,7 +36,26 @@ export async function loginUser(
             break;
         default:
             console.log('User login successfully');
-            const token = jwt.sign({ user }, privateKey);
-            return token;
+
+            const accessToken = jwt.sign({ user }, accessPrivateKey, {
+                expiresIn: '15s',
+            });
+            const refreshToken = jwt.sign({ user }, refreshPrivateKey);
+
+            return { accessToken, refreshToken };
     }
+}
+
+export async function verifyRefreshToken(refreshToken: string): Promise<any> {
+    if (!refreshToken || !refreshToken /*db*/) return false;
+
+    jwt.verify(refreshToken, refreshPrivateKey, (err, user) => {
+        if (err) return false;
+
+        const accessToken = jwt.sign({ user }, accessPrivateKey, {
+            expiresIn: '15s',
+        });
+
+        return accessToken;
+    });
 }

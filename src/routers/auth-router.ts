@@ -1,9 +1,9 @@
 import express, { Request, Response, NextFunction } from 'express';
-import path from 'path';
 
 import {
     registerUserCtrl,
     loginUserCtrl,
+    verifyRefreshTokenCtrl,
 } from '../controllers/auth-controllers';
 import { isAuthMW } from '../middlewares/auth-middleware';
 
@@ -22,22 +22,11 @@ router.get('/user-authenticated', isAuthMW, (req: Request, res: Response) => {
     res.sendStatus(200);
 });
 
+router.post('/token', verifyRefreshTokenCtrl);
+
 /*
 router.post('/logout', (req: Request, res: Response, next: NextFunction) => {
-    //change to jwt
-    req.logout((err) => {
-        if (err) return next(err);
-        else
-            res.sendFile(
-                path.resolve(
-                    __dirname,
-                    '../..',
-                    'client',
-                    'htmls',
-                    'login.html'
-                )
-            );
-    });
+
 });*/
 
 export default router;
