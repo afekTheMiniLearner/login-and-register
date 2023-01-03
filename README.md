@@ -11,7 +11,7 @@ The project includes the following APIs :
 | ----------------------------------- |
 | + Register user |
 | + Login user |
-| + Logout user | &emsp; - Authentication is required |
+| + Logout user |
 
 ---
 
@@ -43,7 +43,7 @@ The project includes the following APIs :
 -   [x] _**Nodejs**_ : the project based on JS.
 -   [x] _**Express**_ : used for the server side routers, middlewares controllers, and services.
 -   [x] _**Typescript**_ : the project have written in _typescript_ for interfaces, variables types, etc..
--   [x] _**Passport**_ : authentication with _passport-local_ strategy `{username, password}` for request body.
+-   [x] _**jwt**_ : authentication with _json-web-token_ by saving token for the authenticated user.
 -   [x] _**MongoDB**_ : _**mongoose**_ for _mongoDB_ with schemas and models that used in the controllers and services.
 -   [x] _**Bcrypt**_ : crypted the users passwords for best data secure and by the guidance of best practice.
 
@@ -56,7 +56,7 @@ The project includes the following APIs :
 
 ### Another features i been using in this project:
 
--   [x] **_passport_ authentication** : authenticate user by compare crypted password with user plaintext password request by the bast practice guidance.
+-   [x] **_jwt_ authentication** : authenticate user by compare crypted password with user plaintext password request by the bast practice guidance.
 -   [x] **_mongoose_ schema hooks** : use pre save hook that crypt the user password before creating user (update user data not applied).
 -   [x] **_postman_** : exported postman collection for _postman_ software :
         `login_and_register_rest_api.postman_collection.json`
