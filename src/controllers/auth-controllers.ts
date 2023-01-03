@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { IUser } from '../interfaces/user-interface';
-import { registerUser } from '../services/user-services';
+import { registerUser, loginUser } from '../services/user-services';
 
 export async function registerUserCtrl(
     req: Request,
@@ -17,8 +17,33 @@ export async function registerUserCtrl(
 
         res.sendStatus(status);
     } catch (e: any) {
-        next(e);
-        /* error can pull the server down if 
-        the username already exists */
+        next(e); // can crash the server if username already exists
     }
+}
+
+export async function loginUserCtrl(
+    req: Request,
+    res: Response,
+    next: NextFunction
+) {
+    try {
+        const { accessToken } = await loginUser(
+            req.body.username,
+            req.body.password
+        );
+
+        if (accessToken) res.json({ accessToken });
+        else res.redirect('/login');
+    } catch (e: any) {
+        next(e); // can crash the server if username already exists
+    }
+}
+
+export async function logoutUserCtrl(
+    req: Request,
+    res: Response,
+    next: NextFunction
+) {
+    res.cookie('jwtAccessToken', '', { maxAge: 1 });
+    res.redirect('/login');
 }

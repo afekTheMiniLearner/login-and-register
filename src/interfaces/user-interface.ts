@@ -3,7 +3,3 @@ export interface IUser {
     username: string;
     password: string;
 }
-
-export type passportConfigUser = {
-    _id?: number;
-};

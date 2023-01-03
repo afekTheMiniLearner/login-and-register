@@ -27,7 +27,6 @@ router.get('/register', (req: Request, res: Response, next: NextFunction) => {
 
 router.get(
     '/success',
-    isAuthMW,
     (req: Request, res: Response, next: NextFunction) => {
         res.sendFile(
             path.resolve(__dirname, '../..', 'client', 'htmls', 'success.html')

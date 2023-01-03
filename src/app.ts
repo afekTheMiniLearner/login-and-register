@@ -6,10 +6,8 @@ import express, {
 } from 'express';
 import bodyParser from 'body-parser';
 import session from 'express-session';
-import passport from 'passport';
 import path from 'path';
 
-import './config/passport-config';
 import { connectDB } from './DB/mongoose';
 import mainRouter from './routers/main-router';
 import authRouter from './routers/auth-router';
@@ -33,9 +31,6 @@ app.use(
 
 app.use(express.static(path.join(__dirname, '..', 'client')));
 
-app.use(passport.initialize());
-app.use(passport.session());
-
 app.use('/', mainRouter);
 app.use('/auth', authRouter);
 
@@ -55,4 +50,5 @@ app.listen(PORT, () => {
     console.log(`Server is up on port ${PORT}`);
 });
 
+export const accessPrivateKey = 'Its-a-secret-shhhh!';
 export default app;

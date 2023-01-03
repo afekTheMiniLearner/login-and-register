@@ -7,7 +7,11 @@
     <body>
         <h1 id="bigTitle" class="titleInitialAnimation">Welcome</h1>
         <div>
-            <form class="buttonsContainer" action="/auth/logout" method="post">
+            <form
+                class="buttonsContainer"
+                action="javascript:;"
+                onsubmit="logoutUser()"
+            >
                 <p class="subTitle">Want to disconnect from your account?</p>
                 <button class="logoutButton" type="submit">Logout</button>
             </form>
