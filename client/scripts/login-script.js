@@ -16,7 +16,6 @@ async function loginUser() {
         .then((data) => {
             localStorage.setItem('successLoginUsername', username);
             localStorage.setItem('jwtAccessToken', data.accessToken);
-            localStorage.setItem('jwtRefreshToken', data.refreshToken);
         })
         .then(() => {
             window.location.href = '/success';

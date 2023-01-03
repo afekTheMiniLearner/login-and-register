@@ -51,5 +51,4 @@ app.listen(PORT, () => {
 });
 
 export const accessPrivateKey = 'Its-a-secret-shhhh!';
-export const refreshPrivateKey = 'sImBa-99099';
 export default app;

@@ -1,18 +1,4 @@
 window.onload = () => {
-    const refreshToken = localStorage.getItem('jwtRefreshToken');
-    //if (!refreshToken) window.location.href = '/login';
-
-    postData('/auth/token', {
-        refreshToken: refreshToken,
-    })
-        .then((res) => {
-            return res.json();
-        })
-        .then((data) => {
-            localStorage.setItem('jwtAccessToken', data.accessToken);
-        })
-        .catch((e) => {});
-
     const accessToken = localStorage.getItem('jwtAccessToken');
 
     if (!accessToken) window.location.href = '/login';
@@ -31,3 +17,12 @@ window.onload = () => {
 
     removeClass(2, 'bigTitle', 'titleInitialAnimation');
 };
+
+async function logoutUser() {
+    getData('/auth/logout')
+        .catch(() => {})
+        .finally(() => {
+            window.location.href = '/login';
+            localStorage.removeItem('jwtAccessToken');
+        });
+}

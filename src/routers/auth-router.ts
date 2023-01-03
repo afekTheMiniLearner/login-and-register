@@ -3,7 +3,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import {
     registerUserCtrl,
     loginUserCtrl,
-    verifyRefreshTokenCtrl,
+    logoutUserCtrl,
 } from '../controllers/auth-controllers';
 import { isAuthMW } from '../middlewares/auth-middleware';
 
@@ -14,19 +14,14 @@ router.use((req: Request, res: Response, next: NextFunction) => {
     next();
 });
 
+router.post('/register', registerUserCtrl);
+
 router.post('/login', loginUserCtrl);
 
-router.post('/register', registerUserCtrl);
+router.get('/logout', logoutUserCtrl);
 
 router.get('/user-authenticated', isAuthMW, (req: Request, res: Response) => {
     res.sendStatus(200);
 });
-
-router.post('/token', verifyRefreshTokenCtrl);
-
-/*
-router.post('/logout', (req: Request, res: Response, next: NextFunction) => {
-
-});*/
 
 export default router;

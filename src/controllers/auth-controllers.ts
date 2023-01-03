@@ -1,10 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { IUser } from '../interfaces/user-interface';
-import {
-    registerUser,
-    loginUser,
-    verifyRefreshToken,
-} from '../services/user-services';
+import { registerUser, loginUser } from '../services/user-services';
 
 export async function registerUserCtrl(
     req: Request,
@@ -31,21 +27,23 @@ export async function loginUserCtrl(
     next: NextFunction
 ) {
     try {
-        const { accessToken, refreshToken } = await loginUser(
+        const { accessToken } = await loginUser(
             req.body.username,
             req.body.password
         );
 
-        if (accessToken) res.json({ accessToken, refreshToken });
+        if (accessToken) res.json({ accessToken });
         else res.redirect('/login');
     } catch (e: any) {
         next(e); // can crash the server if username already exists
     }
 }
 
-export async function verifyRefreshTokenCtrl(req: Request, res: Response) {
-    const accessToken = await verifyRefreshToken(req.body.refreshToken);
-
-    if (!accessToken) res.sendStatus(400);
-    else res.json({ accessToken });
+export async function logoutUserCtrl(
+    req: Request,
+    res: Response,
+    next: NextFunction
+) {
+    res.cookie('jwtAccessToken', '', { maxAge: 1 });
+    res.redirect('/login');
 }

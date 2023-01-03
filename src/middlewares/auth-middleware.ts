@@ -1,7 +1,7 @@
 import jwt, { VerifyOptions } from 'jsonwebtoken';
 
 import { Request, Response, NextFunction } from 'express';
-import { accessPrivateKey,refreshPrivateKey } from '../app';
+import { accessPrivateKey } from '../app';
 
 export async function isAuthMW(
     req: Request,
@@ -13,8 +13,10 @@ export async function isAuthMW(
             'Bearer ',
             ''
         ) as string;
-        
-        jwt.verify(accessToken, accessPrivateKey, { expireIn: '24h' } as VerifyOptions);
+
+        jwt.verify(accessToken, accessPrivateKey, {
+            expireIn: '24h',
+        } as VerifyOptions);
         next();
     } catch (e) {
         res.redirect('/login');
